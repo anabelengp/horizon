@@ -54,7 +54,7 @@ STATIC_URL = '/static/'
 ROOT_URLCONF = 'openstack_dashboard.urls'
 
 HORIZON_CONFIG = {
-    'dashboards': ('project', 'admin', 'settings',),
+    'dashboards': ('project', 'admin', 'settings', 'visualizations'),
     'default_dashboard': 'project',
     'user_home': 'openstack_dashboard.views.get_user_home',
     'ajax_queue_limit': 10,
@@ -121,7 +121,7 @@ COMPRESS_CSS_FILTERS = (
     'compressor.filters.css_default.CssAbsoluteFilter',
 )
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
 COMPRESS_OUTPUT_DIR = 'dashboard'
 COMPRESS_CSS_HASHING_METHOD = 'hash'
 COMPRESS_PARSER = 'compressor.parser.HtmlParser'
@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'openstack_dashboard.dashboards.project',
     'openstack_dashboard.dashboards.admin',
     'openstack_dashboard.dashboards.settings',
+    'openstack_dashboard.dashboards.visualizations',
     'openstack_auth',
 )
 
